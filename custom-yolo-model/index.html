@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teaching a Computer to Find Toys! · SPARK</title>
+<meta name="description" content="Training a custom YOLO object detection model from scratch — the data labeling, the training, and the results, explained simply.">
+<link rel="canonical" href="https://saanvipagadala.github.io/spark-robotics/custom-yolo-model/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Teaching a Computer to Find Toys! · SPARK">
+<meta property="og:description" content="Training a custom YOLO object detection model from scratch — the data labeling, the training, and the results, explained simply.">
+<meta property="og:url" content="https://saanvipagadala.github.io/spark-robotics/custom-yolo-model/">
+<meta property="og:image" content="https://saanvipagadala.github.io/spark-robotics/media/home/home-01.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../media/icon.png">
+<link rel="apple-touch-icon" href="../media/icon.png">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../">SPARK</a>
+    <nav class="nav"><a href="../">Home</a><a href="../custom-yolo-model/" aria-current="page">Custom YOLO Model</a><a href="../el-remoto/">El Remoto</a><a href="../contact-me/">Contact Me</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+  
+  <h1 class="page">Teaching a Computer to Find Toys!</h1>
+  <main class="left-headings">
+<p class="lede"><em>Training a Custom YOLO Object Detection Model</em></p>
+<p class="lede small">YOLO (You Only Look Once) means the AI looks at an image just once to find everything in it.</p>
+<hr class="rule">
+<h2 id="synopsis">Synopsis</h2>
+<p>This report shows how I taught a computer to find and recognize toys in pictures, just like teaching a friend to spot their favorite characters!</p>
+<p><strong>Objects to Detect:</strong> Pikachu, Rosita, Sage, Timon (my Toys)<br><strong>How Many Practice Sessions:</strong> 100<br><strong>Final Score:</strong> 99.5 out of 100!</p>
+<figure class="shot one" style="max-width:none"><img src="../media/yolo/yolo-01.jpg" alt="Custom YOLO Model in Action" loading="lazy"><figcaption>Custom YOLO Model in Action</figcaption></figure>
+<hr class="rule">
+<h2 id="what-did-i-do">What Did I Do?</h2>
+<p>Imagine you have a friend who has never seen your favorite toys before. You want to teach them to find these toys in pictures. That's exactly what I did with a computer!</p>
+<p><strong>My Mission:</strong> Teach a computer to find these toys in pictures:</p>
+<figure class="shot one" style="max-width:none"><img src="../media/yolo/yolo-02.jpg" alt="Meet My Toy Characters! These are the toys the computer learned to find." loading="lazy"><figcaption>Meet My Toy Characters! These are the toys the computer learned to find.</figcaption></figure>
+<hr class="rule">
+<h2 id="how-did-i-teach-the-computer">How did I teach the computer?</h2>
+<p>Just like you learn by practicing, I showed the computer many, many pictures of these toys. Each time, I told it "Yes, that's Pikachu!" or "That's Rosita!" The computer learned by looking at the pictures over and over again — just like how you learned to read by practicing every day!</p>
+<div class="shots cols-4"><figure><img src="../media/yolo/yolo-03.jpg" alt="Training Example 1" loading="lazy"><figcaption>Training Example 1</figcaption></figure><figure><img src="../media/yolo/yolo-04.jpg" alt="Training Example 2" loading="lazy"><figcaption>Training Example 2</figcaption></figure><figure><img src="../media/yolo/yolo-05.jpg" alt="Training Example 3" loading="lazy"><figcaption>Training Example 3</figcaption></figure><figure><img src="../media/yolo/yolo-06.jpg" alt="Training Example 4" loading="lazy"><figcaption>Training Example 4</figcaption></figure></div>
+<p>The computer learned by looking at pictures like these. The colored boxes show where each toy is located. I annotated my images using <a href="https://roboflow.com/">Roboflow</a>, and the dataset is available for <a href="https://app.roboflow.com/myworkspace-42vph/toys-v7xfk/browse">download</a> directly from Roboflow.</p>
+<hr class="rule">
+<h2 id="understanding-my-results">Understanding My Results</h2>
+<p>Before diving into the results, let's understand what some metrics mean in simple terms. Think of training a model like teaching a student — we need ways to measure how well they are learning.</p>
+<h3 id="practice-sessions-epochs">Practice Sessions (Epochs)</h3>
+<p>Each practice session means the computer looked at ALL the toy pictures one time. I had 100 practice sessions. That's like reading the same book 100 times to get really good at it.</p>
+<h3 id="score-accuracy">Score (Accuracy)</h3>
+<p>This is like getting a grade on a test. If the computer finds toys correctly 95 times out of 100, that's a 95% score — pretty awesome!</p>
+<h3 id="finding-all-toys">Finding All Toys</h3>
+<p>Did the computer find EVERY toy in the picture? If there are 5 toys and it finds all 5, that's 100%! If it only finds 4 out of 5, that's 80%.</p>
+<h3 id="being-correct">Being Correct</h3>
+<p>When the computer says "I found Pikachu!", is it really Pikachu? Being correct means not making mistakes like calling Rosita "Pikachu" by accident!</p>
+<h3 id="mistakes">Mistakes</h3>
+<p>Sometimes the computer makes mistakes, like missing a toy or getting confused. The good news? It makes fewer mistakes as it practices more!</p>
+<hr class="rule">
+<h2 id="getting-better-over-time">Getting Better Over Time!</h2>
+<p>Remember when you first learned to ride a bike? You probably wobbled a lot at first, but got better with practice. The computer did the same thing!</p>
+<figure class="shot one" style="max-width:none"><img src="../media/yolo/yolo-07.jpg" alt="SPARK" loading="lazy"></figure>
+<p class="centre">Look at this graph! At the start, the computer was not very good (the line is low). But after lots of practice, it got really good at finding toys! The line goes up and up!</p>
+<h3 id="fun-facts">Fun Facts:</h3>
+<ul>
+<li>Starting score: 58.5%</li>
+<li>Final score: 99.5%</li>
+<li>Got better by: 41.0 points!</li>
+</ul>
+<p>That's like going from a C grade to an A+! Amazing!</p>
+<hr class="rule">
+<h2 id="practice-vs-real-test">Practice vs Real Test</h2>
+<p>Think about how you learn at school:</p>
+<p><strong>Practice (Training):</strong> You do homework problems that your teacher helps you with. You learn from these!</p>
+<p><strong>Real Test (Validation):</strong> Then comes the test with NEW problems you have not seen before. This shows if you really learned or just memorized the homework!</p>
+<p>I did the same with the computer! I gave it practice pictures, then tested it with NEW pictures it had never seen. Let's see how it did:</p>
+<figure class="shot one" style="max-width:none"><img src="../media/yolo/yolo-08.jpg" alt="SPARK" loading="lazy"></figure>
+<p class="centre"><strong>What this shows:</strong> The red line (practice) and blue line (test) stay close together! This means the computer did not just memorize — it really learned! It is like understanding math concepts instead of just memorizing answers. Great job, computer!</p>
+<hr class="rule">
+<h2 id="finding-toys-being-right">Finding Toys &amp; Being Right</h2>
+<p>There are two important things I want the computer to do:</p>
+<p>1. Find ALL the toys (don't miss any!)</p>
+<p>2. Be correct when it finds them (don't make mistakes!)</p>
+<h3 id="example">Example:</h3>
+<p><b class="lead-in">Scenario 1:</b> The computer finds all 10 Pikachus (GOOD!)</p>
+<p>Finding all toys: 10 out of 10 = 100%</p>
+<p><b class="lead-in">Scenario 2:</b> The computer says "I found 10 Pikachus!" but 2 were actually Rosita (oops!)</p>
+<p>Being correct: 8 out of 10 = 80%</p>
+<p>I want BOTH numbers to be high!</p>
+<figure class="shot one" style="max-width:none"><img src="../media/yolo/yolo-09.jpg" alt="SPARK" loading="lazy"></figure>
+<p>My Computer's Results:</p>
+<ul>
+<li>Finding all toys: 100.0%</li>
+<li>Being correct: 99.6%</li>
+</ul>
+<p>Wow! The computer is doing an amazing job at both!</p>
+<hr class="rule">
+<h2 id="watching-mistakes-disappear">Watching Mistakes Disappear!</h2>
+<p>Remember how I said the computer makes mistakes? Let's see what happened to those mistakes as the computer practiced more and more.</p>
+<p>Think of it like learning to spell. At first, you might spell "because" as "becuz". But after practicing, you get it right every time!</p>
+<figure class="shot one" style="max-width:none"><img src="../media/yolo/yolo-10.jpg" alt="SPARK" loading="lazy"></figure>
+<p class="centre"><strong>Look at that!</strong> The lines are going DOWN!</p>
+<p class="centre">Going down means FEWER mistakes. At the beginning, the computer made lots of mistakes (the lines are high). But after practicing, the mistakes got smaller and smaller (the lines go down). This is exactly what I wanted!</p>
+<hr class="rule">
+<h2 id="final-report-card">Final Report Card!</h2>
+<figure class="shot one" style="max-width:none"><img src="../media/yolo/yolo-11.jpg" alt="SPARK" loading="lazy"></figure>
+<p class="centre"><b class="lead-in">CONGRATULATIONS TO MY COMPUTER!</b></p>
+<p>After 100 practice sessions, my computer learned to find toys like a pro. It went from being confused at the start to becoming a toy-finding expert.</p>
+<h3 id="what-can-my-computer-do-now">What can my computer do now?</h3>
+<ul>
+<li>Look at a picture and find all the toys</li>
+<li>Tell you exactly which character each toy is</li>
+<li>Do it super fast — faster than blinking!</li>
+<li>Work on pictures it has never seen before</li>
+</ul>
+<p>This is just like teaching a superhero their powers. Now the computer has the power to see and recognize my toys!</p>
+<figure class="shot one" style="max-width:none"><img src="../media/yolo/yolo-12.jpg" alt="SPARK&#x27;s Eyes at Work: Detecting Toys with YOLO" loading="lazy"><figcaption>SPARK's Eyes at Work: Detecting Toys with YOLO</figcaption></figure>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    SPARK &middot; STEM Projects with AI and Robotics for Kids<br>
+    made by Saanvi Pagadala in 4th grade &middot; 2026
+  </div>
+</footer>
+
+<script src="../site.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Me · SPARK</title>
+<meta name="description" content="Questions or feedback about SPARK and El Remoto.">
+<link rel="canonical" href="https://saanvipagadala.github.io/spark-robotics/contact-me/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact Me · SPARK">
+<meta property="og:description" content="Questions or feedback about SPARK and El Remoto.">
+<meta property="og:url" content="https://saanvipagadala.github.io/spark-robotics/contact-me/">
+<meta property="og:image" content="https://saanvipagadala.github.io/spark-robotics/media/home/home-01.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../media/icon.png">
+<link rel="apple-touch-icon" href="../media/icon.png">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../">SPARK</a>
+    <nav class="nav"><a href="../">Home</a><a href="../custom-yolo-model/">Custom YOLO Model</a><a href="../el-remoto/">El Remoto</a><a href="../contact-me/" aria-current="page">Contact Me</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+  
+  <h1 class="page">Contact Me</h1>
+  <main>
+<p class="lede">Have a question or feedback about the app? We'd love to hear from you!</p>
+<div class="cform-card">
+  <img class="cform-face" src="../media/icon.png" alt="" aria-hidden="true">
+
+  <form class="cform" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="f76cb19b-c38c-4892-bc28-271e2fd45631">
+    <input type="hidden" name="subject" value="SPARK: a message from the website">
+    <input type="hidden" name="from_name" value="SPARK">
+    <input type="hidden" name="redirect" value="https://saanvipagadala.github.io/spark-robotics/thanks/">
+    <!-- Web3Forms names the sending site from the Referer header, which a
+         browser trims to the bare origin. This carries the page address in the
+         message itself, so every notification says where it came from. -->
+    <input type="hidden" name="Sent from" value="https://saanvipagadala.github.io/spark-robotics/contact-me/">
+    <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <p class="cform-intro">Got a question about SPARK, an idea for what it
+    should do next, or something we got wrong? Tell us.</p>
+
+    <label for="cf-name">What should we call you? <span class="req">*</span></label>
+    <input id="cf-name" name="name" type="text" required autocomplete="name"
+           placeholder="Your name">
+
+    <label for="cf-msg">Your message <span class="req">*</span></label>
+    <textarea id="cf-msg" name="message" rows="5" required
+              placeholder="Tell us anything&hellip;"></textarea>
+
+    <label for="cf-email">Email <span class="opt">only if you'd like a reply</span></label>
+    <input id="cf-email" name="email" type="email" autocomplete="email"
+           placeholder="you@example.com">
+
+    <label for="cf-human" class="robot-label">
+      <span class="robot">&#129302;</span>
+      Prove you&rsquo;re not a robot: type <b>spark</b> <span class="req">*</span>
+    </label>
+    <input id="cf-human" name="human_check" type="text" required
+           pattern="\s*[Ss][Pp][Aa][Rr][Kk]\s*"
+           title="Please type the word spark" autocomplete="off"
+           placeholder="spark">
+
+    <button class="cform-send" type="submit">
+      <span>Send it</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20l18-8L3 4v6l12 2-12 2z"/></svg>
+    </button>
+    <p class="cform-status" role="status" aria-live="polite"></p>
+  </form>
+</div>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    SPARK &middot; STEM Projects with AI and Robotics for Kids<br>
+    made by Saanvi Pagadala in 4th grade &middot; 2026
+  </div>
+</footer>
+
+<script src="../site.js"></script>
+
+</body>
+</html>

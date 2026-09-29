@@ -1,0 +1,383 @@
+/* SPARK -- STEM Projects with AI and Robotics for Kids.
+   The look follows the Google Site this replaced: Lato, teal headings on
+   white, everything centred. There is no banner photograph on this one; a
+   menu sits across the top instead, because SPARK is four pages rather than
+   one. The accent is the blue-to-violet of the SPARK mark. */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+:root {
+  --ink:      #212121;
+  --teal:     #226e93;
+  --teal-dim: #1e6c93;
+  --line:     #e0e0e0;
+  /* A hairline of dark charcoal around every screenshot and film, so a
+     picture of a bright screen has an edge against a white page. */
+  --edge:     #2f3437;
+  /* The two ends of the app icon's gradient. */
+  --grad-a:   #6494fd;
+  --grad-b:   #9451c9;
+  --paper:    #ffffff;
+  --paper-2:  #f2f2f2;
+  --measure:  58rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 20px/1.9 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 1076px of content inside 62px gutters, as the Google Site had it. */
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 62px; }
+@media (max-width: 700px) { .wrap { padding: 0 20px; } }
+
+/* ---- the menu ---------------------------------------------------------- */
+/* Four pages need a way between them, and on a page this long the menu has
+   to be findable. Solid teal rather than near-white, so it reads as a bar
+   rather than as the top of the page. */
+
+.topbar {
+  position: sticky; top: 0; z-index: 30;
+  background: var(--teal);
+  border-bottom: 0;
+  box-shadow: 0 1px 10px rgba(24, 28, 30, 0.12);
+}
+.topbar .wrap {
+  display: flex; align-items: center; gap: 18px;
+  min-height: 58px; flex-wrap: wrap;
+}
+.brand {
+  font-weight: 700; font-size: 19px; letter-spacing: 1.5px;
+  color: #fff; text-decoration: none; margin-right: auto;
+}
+.brand:hover { color: #fff; opacity: 0.85; }
+.nav { display: flex; gap: 3px; flex-wrap: wrap; }
+.nav a {
+  color: rgba(255, 255, 255, 0.82); text-decoration: none; font-size: 15px;
+  padding: 7px 14px; border-radius: 999px;
+  transition: background 0.15s, color 0.15s;
+}
+.nav a:hover { color: #fff; background: rgba(255, 255, 255, 0.16); }
+.nav a[aria-current="page"] {
+  color: #fff; font-weight: 700; background: rgba(255, 255, 255, 0.22);
+}
+.nav a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+@media (max-width: 479px) {
+  .brand { font-size: 17px; }
+  .nav a { padding: 6px 10px; font-size: 14px; }
+}
+
+/* ---- headings --------------------------------------------------------- */
+
+h1.page {
+  color: var(--teal); text-align: center;
+  font-size: 45px; font-weight: 300; line-height: 1.15;
+  /* The Google Site left ~185px of air here. Faithful, but it read as a gap
+     rather than as breathing room, so this is deliberately tighter. */
+  letter-spacing: 0.5px; margin: 56px 0 10px;
+}
+h2 {
+  color: var(--teal); text-align: center;
+  font-size: 45px; font-weight: 300; line-height: 1.2;
+  /* Margins collapse with the paragraph above, so this is the gap.
+     Measured against the Google Site, 64px ran ~40px too loose. */
+  letter-spacing: 0.5px; margin: 24px 0 22px;
+}
+@media (max-width: 479px) {
+  h1.page { font-size: 32px; margin-top: 34px; }
+  h2 { font-size: 30px; }
+}
+
+/* ---- prose ------------------------------------------------------------ */
+
+main { padding-bottom: 64px; }
+/* The Google Site justifies its body text -- 8 of its 10 multi-line
+   paragraphs sit flush to both margins. Centred things carry their own class
+   and keep it, since a class beats a bare element selector. */
+p, ul { max-width: none; text-align: justify; }
+p { margin-top: 0; margin-bottom: 0.3em; }
+/* Bullets sit a line apart, not a line plus a margin: the Google Site runs
+   its list items at 34-37px and a half-em margin on top of the line-height
+   pushed these past 50px. */
+ul { padding-left: 1.4em; margin: 0 0 0.3em; }
+li { margin-bottom: 0; }
+a { color: #006580; }
+a:hover { color: #007a93; }
+strong { font-weight: 700; }
+
+/* The three lines under the app icon sit centred, as they did before. */
+.intro { text-align: center; }
+.intro p { margin-bottom: 0.9em; font-size: 20px; }
+
+/* The icon is the one object between the title and the text, so it wants
+   air on both sides of it rather than sitting tight under the heading. */
+.app-icon {
+  display: block; margin: 46px auto 52px;
+  width: 150px; height: 150px;
+}
+@media (max-width: 479px) {
+  .app-icon { margin: 32px auto 36px; width: 120px; height: 120px; }
+}
+
+.callout {
+  color: var(--teal); text-align: center; font-weight: 300;
+  font-size: 45px; line-height: 1.2; letter-spacing: 0.5px;
+  border-top: 1px solid #d9d9d9;
+  padding: 40px 0 0; margin: 40px auto 30px;
+}
+@media (max-width: 479px) { .callout { font-size: 30px; } }
+
+/* A divider runs the width of the content column, and is the same grey
+   the Google Site used. */
+hr.rule { border: 0; border-top: 1px solid #d9d9d9; margin: 46px 0; max-width: none; }
+
+/* ---- galleries -------------------------------------------------------- */
+
+/* The lines directly under a page title: centred and a size up, the way the
+   Google Site set them. */
+.lede {
+  text-align: center; font-size: 20px; color: #3d3d3d;
+  max-width: none; margin: 0 auto 0.4em;
+}
+.lede em { color: #2e2e2e; }
+/* A line of explanation under the lede: measured at 13px on the
+   Google Site, where the lede itself is 20px. */
+.lede.small { font-size: 13px; color: #3a3a3a; }
+
+/* A single character, large and centred: the trophy over the award. Sized to
+   the ~96px the Google Site rendered it at. */
+.emoji {
+  text-align: center; font-size: 96px; line-height: 1.1;
+  margin: 40px 0 0;
+}
+.emoji + h2 { margin-top: 30px; }
+@media (max-width: 479px) { .emoji { font-size: 62px; } }
+
+/* A sub-heading inside a section: teal and small, the size the Google Site
+   sets its labelled blocks at. */
+h3 {
+  color: var(--teal); font-size: 20px; font-weight: 700;
+  line-height: 1.3; margin: 26px 0 10px;
+}
+
+/* A teal lead-in opening a line, rather than a heading of its own. */
+.lead-in { color: var(--teal); font-weight: 700; }
+
+/* The YOLO report ranges its headings left; the other pages centre theirs. */
+.left-headings h2, .left-headings h3 { text-align: left; }
+
+/* ---- pictures ---------------------------------------------------------- */
+
+.shots { display: grid; gap: 22px; margin: 8px auto 28px; }
+.shots.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.shots.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.shots.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.shots figure { margin: 0; }
+/* No frame on any picture: these are screenshots and charts on white, and a
+   box round them adds nothing. */
+.shots img, .shot img {
+  width: 100%; height: auto; display: block; border-radius: 6px;
+  background: var(--paper-2);
+}
+
+/* A picture on its own, held to a readable width rather than the full page. */
+/* A caption belongs to the picture above it, so the space below a figure is
+   small and the space above it carries the separation. */
+.shot.one { margin: 38px auto 12px; max-width: 524px; }
+.shot.plain img { border: 0; background: none; }
+
+/* Captions, under a picture or under a film. One definition, so a line under
+   a screenshot and a line under a video are the same thing on all three of
+   these sites. */
+figcaption, .film-desc {
+  margin: 9px auto 0;
+  font-size: 15px; color: #212121;
+  text-align: center; font-weight: 700;
+}
+@media (max-width: 767px) {
+  .shots.cols-3, .shots.cols-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 479px) {
+  .shots.cols-2, .shots.cols-3, .shots.cols-4 { grid-template-columns: 1fr; }
+  .shot.one { max-width: 22rem; }
+}
+
+/* ---- the films --------------------------------------------------------- */
+/* aspect-ratio holds the 16:9 box before an iframe loads, so nothing below it
+   jumps when it arrives -- which matters on a page with eight of them. */
+
+.filmbox { max-width: 524px; margin: 0 auto 44px; }
+/* The six-film series runs two to a row, as on the Google Site. */
+.films { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px 28px; margin-bottom: 40px; }
+.films .filmbox { max-width: none; margin: 0; }
+@media (max-width: 767px) { .films { grid-template-columns: 1fr; } }
+.film {
+  border-radius: 8px; overflow: hidden;
+  background: #000; line-height: 0;
+}
+.film iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; display: block; }
+.film-title {
+  text-align: center; color: var(--teal); font-weight: 400;
+  font-size: 21px; line-height: 1.3; margin: 14px 0 0;
+}
+/* The running time, about half the height of the name, as on the Google
+   Site. It is a footnote to the title, not part of it. */
+.film-dur { font-size: 12px; font-weight: 400; }
+
+.centre { text-align: center; }
+
+/* ---- a link that looks like a button ----------------------------------- */
+
+.btn-wrap { text-align: center; margin: 26px 0 30px; }
+.btn {
+  display: inline-block; text-decoration: none;
+  font-weight: 700; font-size: 16px; color: #fff;
+  background: var(--teal); padding: 13px 28px; border-radius: 999px;
+  transition: background 0.15s;
+}
+.btn:hover { background: #185a7c; color: #fff; }
+
+/* ---- contact form ----------------------------------------------------- */
+/* A card with a face on it. The app is a children's app about monkeys, and a
+   plain stack of grey boxes was not it. The yellow picks up the lily in the
+   banner; the charcoal edge is the same hairline that frames every
+   screenshot, so the card belongs to the same page. */
+
+/* The banana stripe is a background layer on the card itself, not a box drawn
+   on top of it. A background is clipped to the padding box's own rounded
+   corners, so the stripe cannot round differently from the card no matter
+   what either radius is later changed to.
+   It was a 10px-tall pseudo-element with an 18px radius, and CSS scales
+   radii down when they exceed the box they are on -- so the browser drew
+   those corners at 10px against the card's 18px, and the two arcs
+   disagreed. */
+.cform-card {
+  position: relative;
+  max-width: 34rem; margin: 62px auto 0;
+  background-color: var(--paper);
+  background-image: linear-gradient(90deg, var(--grad-a), var(--grad-b));
+  background-repeat: no-repeat;
+  background-size: 100% 10px;
+  background-position: 0 0;
+  background-origin: padding-box;
+  background-clip: padding-box;
+  border: 2px solid var(--edge); border-radius: 20px;
+  padding: 56px 34px 34px;
+  box-shadow: 0 10px 30px rgba(24, 28, 30, 0.10);
+}
+/* The monkey, sitting on the top edge and looking at the reader. */
+.cform-face {
+  position: absolute; top: -44px; left: 50%; transform: translateX(-50%);
+  width: 84px; height: 84px;
+  background: var(--paper); border-radius: 50%;
+  border: 2px solid var(--edge); padding: 4px;
+}
+
+.cform-intro {
+  text-align: center; margin: 0 auto 28px; max-width: 26rem;
+  color: #4a5459;
+}
+
+.cform label {
+  display: block; margin: 0 0 7px; font-weight: 700; font-size: 15px;
+}
+.cform .req { color: #c0392b; font-weight: 400; }
+.cform .opt { color: #7c8589; font-weight: 400; font-size: 13.5px; }
+
+.cform input[type="text"],
+.cform input[type="email"],
+.cform textarea {
+  /* block, not the inline-block an input is by default: the banana field is
+     narrower than the card, and inline the Send button rides up beside it. */
+  display: block;
+  width: 100%; margin: 0 0 22px;
+  font: inherit; color: var(--ink);
+  background: #fbfcfc;
+  padding: 12px 14px;
+  border: 2px solid #dfe5e7; border-radius: 12px;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.cform textarea { resize: vertical; min-height: 7em; }
+.cform ::placeholder { color: #aab3b7; }
+.cform input:focus, .cform textarea:focus {
+  outline: 0; background: var(--paper);
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px rgba(34, 110, 147, 0.15);
+}
+/* :user-invalid, not :invalid -- an empty required field is invalid from the
+   moment the page loads, and a form that greets the reader in red before they
+   have typed anything is accusing them of nothing. This waits until a field
+   has actually been filled in badly and left. */
+.cform input:user-invalid,
+.cform textarea:user-invalid { border-color: #c0392b; }
+
+/* The one playful field, marked as such. */
+.robot-label { display: flex; align-items: center; gap: 7px; }
+.robot-label b { color: var(--grad-b); }
+.robot { font-size: 19px; line-height: 1; }
+#cf-human { max-width: 15rem; }
+
+/* The honeypot: off-screen rather than display:none, because some scripts
+   skip what is hidden outright but fill in what they can find. */
+.cform .hp {
+  position: absolute; left: -9999px; width: 1px; height: 1px;
+  opacity: 0; pointer-events: none;
+}
+
+.cform-send {
+  display: inline-flex; align-items: center; gap: 9px;
+  font: inherit; font-weight: 700; font-size: 16px; color: #fff;
+  background: var(--teal); border: 0;
+  padding: 13px 30px; border-radius: 999px; cursor: pointer;
+  transition: background 0.15s;
+}
+.cform-send svg { width: 18px; height: 18px; fill: currentColor; }
+.cform-send:hover { background: #24779f; }
+.cform-send:active { background: #14506d; }
+.cform-send:disabled { opacity: 0.55; cursor: default; }
+.cform-send:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+
+.cform-status { margin: 18px 0 0; font-size: 15px; min-height: 1.4em; }
+.cform-status.ok { color: #1d7a45; font-weight: 700; }
+.cform-status.bad { color: #c0392b; font-weight: 700; }
+
+@media (max-width: 479px) {
+  .cform-card { padding: 50px 20px 26px; border-radius: 16px; }
+  .cform-face { width: 68px; height: 68px; top: -36px; }
+}
+
+/* ---- footer ----------------------------------------------------------- */
+
+footer {
+  border-top: 1px solid var(--line); padding: 26px 0 44px;
+  color: #6b6b6b; font-size: 13px; text-align: center;
+}
+footer a { color: #6b6b6b; }
+
+/* ---- fullscreen button ------------------------------------------------ */
+/* The way a video player offers it: a quiet corner button that gets the
+   browser's own furniture out of the way. Added by script, so a browser that
+   cannot do it is never shown it. */
+
+.fs {
+  position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 20;
+  width: 2.5rem; height: 2.5rem; padding: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--paper); color: #5f6b70;
+  border: 1px solid var(--edge); border-radius: 0.5rem;
+  cursor: pointer; opacity: 0.55;
+  transition: opacity 0.15s, color 0.15s, border-color 0.15s;
+}
+.fs svg {
+  width: 1.05rem; height: 1.05rem; fill: none; stroke: currentColor;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+.fs:hover { opacity: 1; color: var(--teal); border-color: var(--teal); }
+.fs:focus-visible { opacity: 1; outline: 2px solid var(--teal); outline-offset: 2px; }
+@media print { .fs { display: none; } }
